@@ -7,12 +7,13 @@ if (!global.hane) {
   process.exit(1)
 }
 
-const validConfigFields = [ 'html', 'linkify' ]
+
 
 class MarkdownRender extends hane.Render {
   constructor() {
     super()
     this.name = 'MarkdownRender'
+    
     const opts = {
       html: false,
       linkify: true,
@@ -30,15 +31,14 @@ class MarkdownRender extends hane.Render {
         // use external default escaping
         return ''
       },
+      ...this.getConfig(),
     }
-    // overwritten by user config
-    for (let k of validConfigFields) {
-      if (k in this.config) {
-        opts[k] = this.config[k]
-      }
-    }
+
     const md = new Remarkable(opts)
     this.md = md
+  }
+  get validConfigFields() {
+    return [ 'html', 'linkify' ]
   }
   feed(str) {
     return new Promise((resolve, reject) => {
