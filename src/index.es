@@ -7,13 +7,11 @@ if (!global.hane) {
   process.exit(1)
 }
 
-
-
 class MarkdownRender extends hane.Render {
   constructor() {
     super()
     this.name = 'MarkdownRender'
-    
+
     const opts = {
       html: false,
       linkify: true,
