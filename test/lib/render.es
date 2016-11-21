@@ -1,9 +1,6 @@
 
-import should from 'should'
-import '../../hane/lib'
-
 describe('MarkdownRender', function () {
-  require('../src')
+  require('../../src')
   describe('register', function () {
     it('should register successfully', function () {
       hane.runtime.should.have.property('render')

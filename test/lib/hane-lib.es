@@ -1,7 +1,4 @@
 
-import should from 'should'
-import '../../hane/lib'
-
 describe('hane', function () {
   it('should has hane', function () {
     global.should.have.property('hane')
