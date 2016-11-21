@@ -4,7 +4,7 @@
   "description": "A markdown render extension for hanejs.",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --compilers es:babel-core/register",
     "build": "babel src/index.es > lib/index.js",
     "postinstall": "npm run build"
   },
@@ -29,6 +29,10 @@
     "remarkable": "^1.7.1"
   },
   "devDependencies": {
-    "babel-preset-es2017-node7": "^0.4.1"
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.18.2",
+    "babel-preset-es2017-node7": "^0.4.1",
+    "mocha": "^3.1.2",
+    "should": "^11.1.1"
   }
 }
