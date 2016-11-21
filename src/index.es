@@ -14,6 +14,7 @@ class MarkdownRender extends hane.Render {
     super()
     this.name = 'MarkdownRender'
     const opts = {
+      html: false,
       linkify: true,
       highlight: function (str, lang) {
         if (lang && hljs.getLanguage(lang)) {
